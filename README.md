@@ -88,6 +88,12 @@ python3 lab/test_login.py
 
 O teste roda 19 verificações e não precisa de nada além do Python. Ele ataca o código vulnerável (que é invadido, como deveria ser) e repete os mesmos ataques contra o corrigido (que resiste). A saída real da execução está registrada em [`docs/evidence/`](docs/evidence/).
 
+**Prints do resultado:**
+
+![Esta seção do README, como aparece no repositório publicado](docs/evidence/prints/01-repo-readme-appsec.png)
+
+![Saída literal do teste: 19/19 verificações passaram, exit 0](docs/evidence/prints/02-teste-19-de-19.png)
+
 ---
 
 ## 📝 Modelos de prompt

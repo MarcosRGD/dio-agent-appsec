@@ -7,6 +7,15 @@ Saída real das execuções citadas no README e no relatório de análise. Nada 
 | [`analise-sqli-app.md`](analise-sqli-app.md) | Relatório completo de `lab/app.py` no formato da skill `vulnerability-analysis` (contexto, achado, risco, exploração, adversário, correção, verificação) | leitura; o número de cada nota está justificado com a evidência correspondente |
 | [`test-login-2026-11-22.txt`](test-login-2026-11-22.txt) | Saída literal de `python3 lab/test_login.py`: 19/19 verificações, exit 0 | `python3 lab/test_login.py` |
 
+## Prints
+
+Capturas do repositório publicado, feitas em navegador sem sessão iniciada (é o que qualquer pessoa vê):
+
+| Print | O que mostra |
+|-------|--------------|
+| [`prints/01-repo-readme-appsec.png`](prints/01-repo-readme-appsec.png) | A seção "Especialização em segurança de aplicação" do README, com as 6 etapas e o ponteiro para `lab/` |
+| [`prints/02-teste-19-de-19.png`](prints/02-teste-19-de-19.png) | O arquivo `test-login-2026-11-22.txt` aberto no GitHub, de onde sai a linha `19/19 verificacoes passaram` e `# exit=0` |
+
 ## Como ler a saída do teste
 
 - **Seção 1 — código vulnerável (esperado: ser invadido).** Cada linha `[OK]` aqui significa que o ataque **funcionou**. Seção toda verde é o retrato do problema, não da solução.
