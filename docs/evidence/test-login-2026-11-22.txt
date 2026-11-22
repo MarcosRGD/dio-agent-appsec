@@ -1,0 +1,32 @@
+# Saida real de: python3 lab/test_login.py
+# Data: 2026-11-22T17:17:21Z UTC
+# Host: Linux 7.3.4-300.fc45.x86_64 | Python 3.12.11
+
+
+1) CODIGO VULNERAVEL (esperado: ser invadido)
+  [OK  ] login correto funciona
+  [OK  ] senha errada e negada
+  [OK  ] bypass com comentario entra como admin  -> "admin' --" -> 'Acesso Permitido!'
+  [OK  ] tautologia entra sem senha  -> "' OR 1=1 --" -> 'Acesso Permitido!'
+  [OK  ] UNION entra sem senha  -> "' UNION SELECT id, username, password, role FROM usuarios --" -> 'Acesso Permitido!'
+  [OK  ] vaza todos os usuarios e senhas em claro  -> 2 linhas, roles=['user', 'admin']
+
+2) CODIGO CORRIGIDO (esperado: resistir a tudo)
+  [OK  ] login correto funciona
+  [OK  ] senha errada e negada
+  [OK  ] rejeita payload "admin' --"  -> 'Acesso Negado.'
+  [OK  ] rejeita payload "' OR 1=1 --"  -> 'Acesso Negado.'
+  [OK  ] rejeita payload "' UNION SELECT id, username, password, role FROM usuarios --"  -> 'Acesso Negado.'
+  [OK  ] rejeita senha vazia
+  [OK  ] rejeita None
+  [OK  ] rejeita entrada gigante
+  [OK  ] senha nao esta em claro no banco  -> pbkdf2_sha256$600000$4...
+  [OK  ] hash tem salt e iteracoes
+  [OK  ] conexao de leitura nao escreve  -> attempt to write a readonly database
+  [OK  ] tabela intacta depois dos ataques  -> 2 linhas
+  [OK  ] tempo parecido p/ usuario inexistente (anti-enumeracao)  -> existente=340ms inexistente=339ms delta=0.2%
+
+19/19 verificacoes passaram
+RESULTADO: TUDO OK — injecao de SQL mitigada, senha com hash, sem enumeracao por tempo
+
+# exit=0
